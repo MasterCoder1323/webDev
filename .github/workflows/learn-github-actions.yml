@@ -2,12 +2,9 @@ name: learn-github-actions
 run-name: ${{ github.actor }} is learning GitHub Actions
 on: [push]
 jobs:
-  check-bats-version:
+  format-code:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '14'
-      - run: npm install -g firebase-tools
-      - run: firebase -v
+      - run: apt install tidy
+      - run: tidy -v
+      - run: tidy *.html
