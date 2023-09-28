@@ -5,6 +5,7 @@ jobs:
   format-code:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - run: apt install tidy
       - run: tidy -v
-      - run: tidy *.html
+      - run: tidy 
