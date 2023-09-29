@@ -15,7 +15,9 @@ function clearCanvas() {
 }
 
 function draw() {
-
+	//Center Canvas
+	var x = (windowWidth - width) / 2;
+	canvas.position(x);
 	// Set stroke weight to 13
 	strokeWeight(13);
 	// Set stroke color to black
@@ -24,6 +26,7 @@ function draw() {
 	if (mouseIsPressed) {
 		line(pmouseX, pmouseY, mouseX, mouseY);
 	}
+
 }
 
 function classifyCanvas() {
