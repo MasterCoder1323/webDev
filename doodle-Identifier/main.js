@@ -9,6 +9,11 @@ function preload() {
 	classifier = ml5.imageClassifier("DoodleNet");
 }
 
+function clearCanvas() {
+
+	background("white");
+}
+
 function draw() {
 
 	// Set stroke weight to 13
