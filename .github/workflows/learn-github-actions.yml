@@ -1,0 +1,10 @@
+name: learn-github-actions
+run-name: ${{ github.actor }} is learning GitHub Actions
+on: [push]
+jobs:
+  format-code:
+    runs-on: ubuntu-latest
+    steps:
+      - run: apt install tidy
+      - run: tidy -v
+      - run: tidy *.html
