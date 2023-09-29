@@ -1,12 +1,12 @@
-name: learn-github-actions
-run-name: ${{ github.actor }} is learning GitHub Actions
+name: Tidy-HTML-Files
+run-name: ${{ github.actor }} is learning Cleaning the HTML files
 on: [push]
 jobs:
-  tidy-html-files:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - run: sudo apt install tidy
-      - run: echo Tidy Installed
-      - run: tidy -v
-      - run: tidy *.html
+    tidy-html-files:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - run: sudo apt install tidy
+            - run: echo Tidy Installed
+            - run: tidy -v
+            - run: tidy *.html
