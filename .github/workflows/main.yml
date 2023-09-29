@@ -1,5 +1,5 @@
 name: Tidy-HTML-Files
-run-name: ${{ github.actor }} is learning Cleaning the HTML files
+run-name: ${{ github.actor }} is Cleaning the HTML files
 on: [push]
 jobs:
     tidy-html-files:
