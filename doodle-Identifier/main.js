@@ -38,10 +38,11 @@ function gotResult(error, results) {
 		console.error(error);
 	}
 	console.log(results);
-	document.getElementById('label').innerHTML = 'Label: ' + results[0].label;
+	let label = results[0].label.replace("_", " ");
+	document.getElementById('label').innerHTML = 'Label: ' + label;
 
 	document.getElementById('confidence').innerHTML = 'Confidence: ' + Math.round(results[0].confidence * 100) + '%';
 
-	utterThis = new SpeechSynthesisUtterance(results[0].label);
+	utterThis = new SpeechSynthesisUtterance(label);
 	synth.speak(utterThis);
 }
