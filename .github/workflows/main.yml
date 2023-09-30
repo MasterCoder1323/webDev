@@ -5,9 +5,22 @@ jobs:
     tidy-html-files:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@main
-            - run: sudo apt install tidy
-            - run: echo Tidy Installed
-            - run: tidy -v
-            - run: touch tidy-html.log
-            - run: tidy *.html > tidy-html.log
+            - name: Checkout Repository
+              uses: actions/checkout@main
+            - name: Format
+              run: |
+                  sudo apt install tidy
+                  echo Tidy Installed
+                  tidy -v
+                  touch tidy-html.log
+                  tidy *.html > tidy-html.log
+            - name: Commit changes
+              run: |
+                  git config --global user.email "no-reply@github.com"
+                  git config --global user.name "GitHub Actions"
+                  git add files.json
+                  git commit -m "Update files.json"
+                  git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+                  git push
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
