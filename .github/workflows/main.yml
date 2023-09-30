@@ -12,7 +12,7 @@ jobs:
                   sudo apt install tidy
                   echo Tidy Installed
                   tidy -v
-                  touch tidy-html.log
+                  touch tidy.log
                   tidy *.html *.css *.js > tidy-html.log
             - name: Making Commit Log
               run: |
@@ -22,7 +22,7 @@ jobs:
               run: |
                   git config --global user.email "no-reply@github.com"
                   git config --global user.name "GitHub Actions"
-                  git add tidy-html.log
+                  git add tidy.log
                   git add commit.log
                   git commit -m "Update tidy-html.log"
                   git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
