@@ -16,13 +16,14 @@ jobs:
                   tidy *.html *.css *.js > tidy-html.log
             - name: Making Commit Log
               run: |
-                  ls -a > previous-commit.log
+                  echo \n \n Next Commit >> commit.log
+                  ls -a >> commit.log
             - name: Commit changes
               run: |
                   git config --global user.email "no-reply@github.com"
                   git config --global user.name "GitHub Actions"
                   git add tidy-html.log
-                  git add previous-commit.log
+                  git add commit.log
                   git commit -m "Update tidy-html.log"
                   git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
                   git push
