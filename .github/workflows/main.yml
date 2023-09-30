@@ -7,21 +7,15 @@ jobs:
         steps:
             - name: Checkout Repository
               uses: actions/checkout@main
-            - name: Formating Websites
+            - name: Formating HTML Code
               run: |
                   sudo apt install tidy
                   echo Tidy Installed
                   touch tidy.log
                   tidy -v > tidy.log
                   tidy -mi *.html >> tidy.log || true
-                  tidy -mi *.js >> tidy.log || true
-                  tidy -mi *.css >> tidy.log || true
                   tidy -mi */*.html >> tidy.log || true
-                  tidy -mi */*.js >> tidy.log || true
-                  tidy -mi */*.css >> tidy.log || true
                   tidy -mi */*/*.html >> tidy.log || true
-                  tidy -mi */*/*.js >> tidy.log || true
-                  tidy -mi */*/*.css >> tidy.log || true
             - name: Making Commit Log
               run: |
                   echo Next Commit >> commit.log
@@ -30,7 +24,7 @@ jobs:
               run: |
                   git config --global user.email "no-reply@github.com"
                   git config --global user.name "GitHub Actions"
-                  git add tidy.log commit.log *.html *.js *.css */*.html */*.js */*.css */*/*.html */*/*.js */*/*.css
+                  git add tidy.log commit.log *.html */*.html */*/*.html
                   git commit -m "Tidy Formatting"
                   git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
                   git push

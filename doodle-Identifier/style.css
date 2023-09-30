@@ -1,18 +1,40 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta name="generator" content=
-  "HTML Tidy for HTML5 for Linux version 5.6.0">
-  <title></title>
-</head>
-<body>
-  body { background-color: gradient(red, green, blue); } h1 {
-  color: rgb(38, 0, 255); } #header { background-color: orange; }
-  #show_sketch { float: right; } canvas { border: 5px solid white;
-  border-radius: 20px; animation-name: example; animation-duration:
-  4s; margin-top: 50px; animation-iteration-count: infinite; }
-  @keyframes example { from { box-shadow: 1px 1px 38px yellow; } to
-  { box-shadow: 5px 1px 38px magenta; } } p { padding-top: 10px;
-  font-size: 25px; }
-</body>
-</html>
+body {
+	background-color: gradient(red, green, blue);
+}
+
+h1 {
+	color: rgb(38, 0, 255);
+}
+
+#header {
+	background-color: orange;
+}
+
+#show_sketch {
+	float: right;
+}
+
+canvas {
+	border: 5px solid white;
+	border-radius: 20px;
+	animation-name: example;
+	animation-duration:
+		4s;
+	margin-top: 50px;
+	animation-iteration-count: infinite;
+}
+
+@keyframes example {
+	from {
+		box-shadow: 1px 1px 38px yellow;
+	}
+
+	to {
+		box-shadow: 5px 1px 38px magenta;
+	}
+}
+
+p {
+	padding-top: 10px;
+	font-size: 25px;
+}
