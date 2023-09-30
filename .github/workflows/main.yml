@@ -21,12 +21,12 @@ jobs:
                   tidy -mi */*/*.html >> tidy.log || true
             - name: Formatting JS Code
               run: |
-                  sudo npm i -g jsfmt
+                  sudo npm i -g jsfmt || true
                   touch jsfmt.log
-                  jsfmt -v > jsfmt.log
-                  jsfmt -w *.js >> jsfmt.log
-                  jsfmt -w */*.js >> jsfmt.log
-                  jsfmt -w */*/*.js >> jsfmt.log
+                  jsfmt -v > jsfmt.log 
+                  jsfmt -w *.js >> jsfmt.log || true
+                  jsfmt -w */*.js >> jsfmt.log || true
+                  jsfmt -w */*/*.js >> jsfmt.log || true
             - name: Making Commit Log
               run: |
                   echo Next Commit >> commit.log
