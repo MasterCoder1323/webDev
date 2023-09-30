@@ -23,6 +23,7 @@ canvas {
 		4s;
 	margin-top: 50px;
 	animation-iteration-count: infinite;
+	padding-bottom: 20px;
 }
 
 @keyframes example {
