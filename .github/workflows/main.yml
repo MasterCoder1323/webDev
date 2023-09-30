@@ -16,7 +16,7 @@ jobs:
                   tidy *.html *.css *.js > tidy-html.log
             - name: Making Commit Log
               run: |
-                  echo \n \n Next Commit >> commit.log
+                  echo Next Commit >> commit.log
                   ls -a >> commit.log
             - name: Commit changes
               run: |
