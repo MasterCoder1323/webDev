@@ -18,8 +18,8 @@ jobs:
               run: |
                   git config --global user.email "no-reply@github.com"
                   git config --global user.name "GitHub Actions"
-                  git add files.json
-                  git commit -m "Update files.json"
+                  git add tidy-html.log
+                  git commit -m "Update tidy-html.log"
                   git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
                   git push
               env:
