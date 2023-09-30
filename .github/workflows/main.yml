@@ -23,7 +23,7 @@ jobs:
               run: |
                   sudo npm i -g jsfmt || true
                   touch jsfmt.log || true
-                  jsfmt -v > jsfmt.log || true
+                  jsfmt --version > jsfmt.log || true
                   jsfmt -w *.js >> jsfmt.log || true
                   jsfmt -w */*.js >> jsfmt.log || true
                   jsfmt -w */*/*.js >> jsfmt.log || true
