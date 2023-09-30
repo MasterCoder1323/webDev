@@ -4,7 +4,7 @@
 	<head>
 		<meta name="generator" content="HTML Tidy for HTML5 for Linux version 5.6.0">
 		<meta charset="UTF-8">
-		<title>Doodle Identifier</title>
+		<title>Quick Doodle</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
@@ -28,13 +28,18 @@
 					<div class="modal-body"><img src="sketch1.png"> <img src="sketch2.png"></div>
 				</div>
 			</div>
-			<h1>Quick Draw <button id="show_sketch" class="btn btn-info" data-toggle="modal" data-target="#myModal">Show
-					Sketch</button></h1>
-			<p id="label">Your Sketch :</p>
+			<div id="header">
+				<h1>Quick Doodle
+					<button id="show_sketch" class="btn btn-info" data-toggle="modal" data-target="#myModal">Show
+						Sketch</button>
+				</h1>
+			</div>
+			<p id="label">Label :</p>
 			<p id="confidence">Confidence :</p>
-			<p class="danger" id="to-be-drawn"></p><span id="score">Score:</span> <span id="timer">Timer:</span>
-			<br>
 			<button class="btn btn-danger btn-lg" onclick="clearCanvas()">Clear Canvas</button>
+			<h3>Sketch to be Drawn:<span id="name-of-sketch"></span></h3>
+			<span id="score" class="left">Score:</span>
+			<span id="timer" class="right">Timer:</span>
 		</center><br>
 		<script src="main.js"></script>
 	</body>
