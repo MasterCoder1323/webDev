@@ -9,4 +9,5 @@ jobs:
             - run: sudo apt install tidy
             - run: echo Tidy Installed
             - run: tidy -v
+            - run: touch tidy-html.log
             - run: tidy *.html > tidy-html.log
