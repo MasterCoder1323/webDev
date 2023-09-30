@@ -5,7 +5,7 @@ jobs:
     tidy-html-files:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v4
+            - uses: actions/checkout
             - run: sudo apt install tidy
             - run: echo Tidy Installed
             - run: tidy -v
