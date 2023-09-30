@@ -13,7 +13,15 @@ jobs:
                   echo Tidy Installed
                   touch tidy.log
                   tidy -v > tidy.log
-                  tidy -mi *.html *.css *.js */*.html */*.css */*.js -o tidy.log || true
+                  tidy -mi *.html >> tidy.log || true
+                  tidy -mi *.js >> tidy.log || true
+                  tidy -mi *.css >> tidy.log || true
+                  tidy -mi */*.html >> tidy.log || true
+                  tidy -mi */*.js >> tidy.log || true
+                  tidy -mi */*.css >> tidy.log || true
+                  tidy -mi */*/*.html >> tidy.log || true
+                  tidy -mi */*/*.js >> tidy.log || true
+                  tidy -mi */*/*.css >> tidy.log || true
             - name: Making Commit Log
               run: |
                   echo Next Commit >> commit.log
