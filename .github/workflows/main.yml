@@ -11,9 +11,9 @@ jobs:
               run: |
                   sudo apt install tidy
                   echo Tidy Installed
-                  tidy -v
                   touch tidy.log
-                  tidy *.html *.css *.js */*.html */*.css */*.js> tidy-html.log
+                  tidy -v > tidy.log
+                  tidy *.html *.css *.js */*.html */*.css */*.js >> tidy-html.log
             - name: Making Commit Log
               run: |
                   echo Next Commit >> commit.log
