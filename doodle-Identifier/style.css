@@ -27,11 +27,11 @@ canvas {
 @keyframes example {
 
 	from {
-		box-shadow: 1px 1px 38px grey;
+		box-shadow: 1px 1px 38px yellow;
 	}
 
 	to {
-		box-shadow: 1px 1px 38px white;
+		box-shadow: 5px 1px 38px magenta;
 	}
 
 }
