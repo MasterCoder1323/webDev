@@ -1,11 +1,13 @@
 body {
-	background-color: #fbd139;
+	background-color: gradient(red, green, blue);
 }
 
 h1 {
-
 	color: rgb(38, 0, 255);
-	background-color: cornsilk;
+}
+
+#header {
+	background-color: orange;
 }
 
 #show_sketch {
