@@ -1,4 +1,4 @@
-name: Tidy-HTML-Files
+name: PUSH-JOBS
 run-name: ${{ github.actor }} is Editing Commits
 on: [push]
 jobs:
@@ -10,23 +10,6 @@ jobs:
                   node-version: "18"
             - name: Checkout Repository
               uses: actions/checkout@main
-            - name: Formating HTML Code
-              run: |
-                  sudo apt install tidy
-                  echo Tidy Installed
-                  touch tidy.log
-                  tidy -v > tidy.log
-                  tidy -mi *.html >> tidy.log || true
-                  tidy -mi */*.html >> tidy.log || true
-                  tidy -mi */*/*.html >> tidy.log || true
-            - name: Formatting JS Code
-              run: |
-                  sudo npm i -g jsfmt || true
-                  touch jsfmt.log || true
-                  jsfmt --version > jsfmt.log || true
-                  jsfmt -w *.js >> jsfmt.log || true
-                  jsfmt -w */*.js >> jsfmt.log || true
-                  jsfmt -w */*/*.js >> jsfmt.log || true
             - name: Making Commit Log
               run: |
                   echo Next Commit >> commit.log
@@ -35,8 +18,8 @@ jobs:
               run: |
                   git config --global user.email "no-reply@github.com"
                   git config --global user.name "GitHub Actions"
-                  git add tidy.log jsfmt.log commit.log *.html */*.html */*/*.html *.js */*.js */*/*.js
-                  git commit -m "Formatting Code"
+                  git add commit.log
+                  git commit -m "Push Actions"
                   git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
                   git push
               env:
