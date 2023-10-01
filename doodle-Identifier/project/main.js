@@ -4,6 +4,8 @@ function setup() {
 	background("white");
 	canvas.mouseReleased(classifyCanvas);
 	synth = window.speechSynthesis;
+
+
 }
 function preload() {
 	classifier = ml5.imageClassifier("DoodleNet");
