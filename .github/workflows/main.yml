@@ -12,11 +12,10 @@ jobs:
               uses: actions/checkout@main
             - name: Get Current Date
               id: date
-              run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+              run: echo "time=$(date --rfc-3339=date)" >> ${GITHUB_ENV}
             - name: Making Commit Log
               run: |
-                  echo "\n \n" >> commit.log
-                  echo Next Commit on ${{ steps.date.outputs.date }} >> commit.log
+                  echo Next Commit on ${{ env.time }} >> commit.log
                   ls -a >> commit.log
             - name: Commit changes
               run: |
