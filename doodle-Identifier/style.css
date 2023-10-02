@@ -1,12 +1,13 @@
 body {
-	background-color: gradient(red, green, blue);
+	background-color: blue;
 }
 
 h1 {
 	color: rgb(38, 0, 255);
+	background-color: orange;
 }
 
-#header {
+#header, html {
 	background-color: orange;
 }
 
