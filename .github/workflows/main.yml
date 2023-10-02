@@ -15,6 +15,7 @@ jobs:
               run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
             - name: Making Commit Log
               run: |
+                  echo "\n \n" >> commit.log
                   echo Next Commit on ${{ steps.date.outputs.date }} >> commit.log
                   ls -a >> commit.log
             - name: Commit changes
