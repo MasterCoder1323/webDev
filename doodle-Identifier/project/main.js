@@ -11,12 +11,13 @@ function preload() {
 }
 function updateCanvas() {
 	background("white");
-	let num = random(0, catagories.length);
+	let num = floor(random(340));
 	let selection = catagories[num];
 	console.log(selection);
 	document.getElementById('name-of-sketch').innerHTML = selection;
 	answer = selection;
 }
+updateCanvas();
 function draw() {
 	//Center Canvas 
 	var x = (windowWidth - width) / 2;
