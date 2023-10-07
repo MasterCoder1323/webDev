@@ -1,0 +1,20 @@
+body {
+    background-color: aqua;
+    color: black;
+}
+
+#h1323 {
+    width: 80%;
+    font-size: 24px;
+}
+
+#camera {
+    border: 2px dashed black;
+    width: 350px;
+    height: 300px;
+}
+
+.resultText {
+    color: darkgoldenrod;
+    font-size: 20px;
+}

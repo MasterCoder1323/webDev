@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Lobster&family=Roboto:wght@300&family=Special+Elite&display=swap');
+
+body {
+	font-family: 'Special Elite', cursive;
+	background-color: linear-gradient(red,blue);
+}
+h1 {
+	font-family: 'Bungee Shade', cursive;
+	color: linear-gradient(black,white);
+	background-color: linear-gradient(white,black);
+}
+footer {
+	position: fixed;
+	color: white;
+	background-color: black;
+	bottom: 0;
+	width: 100%;
+	font-size: 18px;
+	line-height:3;
+	text-align: center;
+	text-shadow: 5px 5px 5px gold; 
+}
+

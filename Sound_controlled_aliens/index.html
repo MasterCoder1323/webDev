@@ -1,0 +1,39 @@
+
+<html>
+	<head>
+		<title>Sound Identification Web App</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet"
+			href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script
+			src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+		<script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+
+	<body onload="setup();">
+		<center>
+			<h1>Sound Controlled Aliens</h1>
+			<h4>Note: Play different sounds like classical music, alternative rock music,
+				and techno music.</h4>
+			<div class="main_div">
+				<button class="btn btn-success" onclick="start();">Start Listening!</button>
+				<br>
+				<h3 id="label">I can hear - </h3>
+				<h3 id="confidence">Accuracy - </h3>
+				<br>
+				<img src="aliens-01.png" id="alien-1" width="300" height="300">
+				<img src="aliens-02.png" id="alien-2" width="300" height="300">
+				<img src="aliens-03.png" id="alien-3" width="300" height="300">
+				<img src="aliens-04.png" id="alien-4" width="300" height="300">
+			</div>
+		</center>
+		<footer>
+			MADE BY JLS Software
+			<br>
+			<a href="license.txt">Click to view licence</a>
+		</footer>
+		<script src="main.js"></script>
+	</body>
+</html>

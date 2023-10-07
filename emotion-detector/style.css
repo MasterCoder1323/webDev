@@ -1,0 +1,43 @@
+body {
+	background-image: linear-gradient(navy, blue, turquoise, aquamarine);
+
+}
+
+#heading {
+	font-size: 24px;
+	padding-right: 10%;
+	padding-left: 10%;
+	border: 5px double black;
+	border-radius: 10px;
+}
+
+.emoji {
+	font-size: 50px;
+}
+
+#emo-head {
+	background-image: linear-gradient(to right, yellow, red, navy);
+}
+
+#camera, #result {
+	border: 2px dashed black;
+	width: 350px;
+	height: 300px;
+}
+
+.emotion-name {
+	font-size: 30px;
+	color: black;
+}
+
+label {
+	font-size: 14px;
+	color: magenta;
+	padding: 6px;
+	border-radius: 10px;
+	background-color: white;
+}
+
+.black {
+	background-color: black;
+}
