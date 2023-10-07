@@ -15,14 +15,14 @@ jobs:
               run: echo "time=$(date --rfc-3339=date)" >> ${GITHUB_ENV}
             - name: Making Commit Log
               run: |
-                  echo Next Commit on ${{ env.time }} >> commit.log
-                  ls -a >> commit.log
+                  echo Next Commit on ${{ env.time }} >> .github/workflow-data/commit.log
+                  ls -a >> .github/workflow-data/commit.log
             - name: Commit changes
               run: |
                   git config --global user.email "no-reply@github.com"
                   git config --global user.name "GitHub Actions"
-                  git add commit.log
-                  git commit -m "Push Actions"
+                  git add .github/workflow-data/commit.log
+                  git commit -m "Making Commit Log"
                   git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
                   git push
               env:
