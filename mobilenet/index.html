@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+
 <html>
 
 	<head>
@@ -11,23 +13,37 @@
 		<script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
 
 		<link rel="stylesheet" type="text/css" href="style.css">
+
 	</head>
 
-	<body>
+	<body background="background.jpg">
 		<center>
-			<h3 class="">Real Time Image Identification App</h3>
+			<h3 class="btn-primary heading">Real Time Image Identification App
+				<hr>
+				<center>
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 heading_div">
+						We are using Mobilenet as a Model
+						<br>
+						<div class="btn heading_div2">
+							Mobilenet model is trained on <br> more then 1.3 million images
+						</div>
+					</div>
+				</center>
+				<br>
+			</h3>
 			<br><br>
 
-			<p class="">Object :
-				<span id=""></span>
+			<p class="btn btn-success result_para_tag">Object :
+				<span id="result_object_name"></span>
 			</p>
 
 			<br><br>
-			<p class="">Accuracy :
-				<span id=""></span>
+			<p class="btn btn-success result_para_tag">Accuracy :
+				<span id="result_object_accuracy"></span>
 			</p>
 			<div id="canvas-parent"></div>
 		</center>
+
 		<hr id="footer-top">
 		<footer class="bg-dark text-center text-lg-start">
 			<!-- Grid container -->
