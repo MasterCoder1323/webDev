@@ -1,4 +1,5 @@
 function setup() {
-	canvas = createCanvas(480, 640);
-	canvas.id = "p5";
+	canvas = createCanvas(300, 300);
+	canvas.parent("canvas-parent");
+	background('black');
 }
