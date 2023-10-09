@@ -10,6 +10,7 @@ canvas {
 		4s;
 	margin-top: 50px;
 	animation-iteration-count: infinite;
+	animation-direction: alternate;
 }
 
 @keyframes example {
