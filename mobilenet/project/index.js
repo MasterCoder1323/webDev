@@ -5,10 +5,11 @@ const client = new VisionClient();
 
 function setup() {
 	console.log('success');
+	video = createCapture(VIDEO);
 }
 
 function draw() {
-	identify("../../../Sound_controlled_aliens/aliens-01.png");
+	identify(video);
 }
 
 function identify(image) {
