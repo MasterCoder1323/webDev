@@ -31,5 +31,12 @@ module.exports = {
 			http: require.resolve("stream-http"),
 			zlib: require.resolve("browserify-zlib"),
 		},
+		modules: [
+			'node_modules',
+		],
+	},
+	externals: {
+		fs: 'fs',
+		child_process: 'child_process',
 	},
 };
