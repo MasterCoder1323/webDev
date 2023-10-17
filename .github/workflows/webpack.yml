@@ -1,0 +1,30 @@
+name: Webpacking
+run-name: ${{ github.actor }} is Webpacking
+on:
+    push:
+        paths:
+            - "mobilenet/project/index.js"
+jobs:
+    master:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/setup-node@v3
+              with:
+                  node-version: "18"
+            - name: Checkout Repository
+              uses: actions/checkout@main
+            - name: Webpacking Mobilenet
+              run: |
+                  npm i webpack
+                  cd mobilenet/project
+                  webpack
+            - name: Commit changes
+              run: |
+                  git config --global user.email "no-reply@github.com"
+                  git config --global user.name "GitHub Actions"
+                  git add ./mobilenet/project/dist/bundle.js
+                  git commit -m "Webpacking"
+                  git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+                  git push
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

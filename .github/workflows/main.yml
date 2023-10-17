@@ -1,9 +1,6 @@
 name: Webpacking
 run-name: ${{ github.actor }} is Webpacking
-on:
-    push:
-        paths:
-            - "mobilenet/project/index.js"
+on: [push]
 jobs:
     master:
         runs-on: ubuntu-latest
@@ -13,17 +10,19 @@ jobs:
                   node-version: "18"
             - name: Checkout Repository
               uses: actions/checkout@main
-            - name: Webpacking Mobilenet
+            - name: Get Current Date
+              id: date
+              run: echo "time=$(date --rfc-3339=date)" >> ${GITHUB_ENV}
+            - name: Making Commit Log
               run: |
-                  npm i webpack
-                  cd mobilenet/project
-                  webpack
+                  echo Next Commit on ${{ env.time }} >> .github/workflow-data/commit.log
+                  ls -a >> .github/workflow-data/commit.log
             - name: Commit changes
               run: |
                   git config --global user.email "no-reply@github.com"
                   git config --global user.name "GitHub Actions"
-                  git add ./mobilenet/project/dist/bundle.js
-                  git commit -m "Webpacking"
+                  git add .github/workflow-data/commit.log
+                  git commit -m "Making Commit Log"
                   git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
                   git push
               env:
