@@ -4,6 +4,7 @@ on:
     push:
         paths:
             - "mobilenet/project/index.js"
+            - ".github/workflows/webpack.yml"
 jobs:
     master:
         runs-on: ubuntu-latest
@@ -25,6 +26,7 @@ jobs:
                   git add ./mobilenet/project/dist/bundle.js
                   git commit -m "Webpacking"
                   git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+                  git config pull.rebase false
                   git pull
                   git push
               env:
