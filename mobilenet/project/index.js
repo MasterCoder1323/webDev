@@ -11,6 +11,7 @@ function setup() {
 function draw() {
 	identify(video);
 }
+setup();
 
 function identify(image) {
 	var objects = client.detectObjects(image, (err, results) => {

@@ -1,5 +1,5 @@
-name: Webpacking
-run-name: ${{ github.actor }} is Webpacking
+name: Commit Editor
+run-name: ${{ github.actor }} is Editing Commits
 on: [push]
 jobs:
     master:
