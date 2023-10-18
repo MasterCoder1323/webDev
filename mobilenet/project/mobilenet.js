@@ -32,6 +32,4 @@ function
 	}
 	console.log(results[0].label);
 	document.getElementById('object-name-mobilenet').innerHTML = results[0].label;
-	utterThis = new SpeechSynthesisUtterance(label);
-	synth.speak(utterThis);
 }
