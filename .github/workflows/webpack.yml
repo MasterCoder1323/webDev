@@ -25,6 +25,7 @@ jobs:
                   git add ./mobilenet/project/dist/bundle.js
                   git commit -m "Webpacking"
                   git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+                  git pull
                   git push
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
