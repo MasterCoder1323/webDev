@@ -1,0 +1,2 @@
+exclude:
+    - mobilenet/project/node_modules/*
