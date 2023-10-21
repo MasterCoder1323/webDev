@@ -1,7 +1,9 @@
 const { VisionClient } = require('@google-cloud/vision');
 const p5 = require('node-p5');
 
-const client = new VisionClient();
+const client = new VisionClient({
+	projectId: 'default-402015',
+});
 
 function setup() {
 	console.log('success');
