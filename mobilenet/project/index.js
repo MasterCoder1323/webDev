@@ -1,1 +1,2 @@
-const { ImageAnnotatorClient } = require('@google-cloud/vision');
+import { ImageAnnotatorClient } from '@google-cloud/vision';
+

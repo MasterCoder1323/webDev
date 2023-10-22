@@ -23,7 +23,7 @@ jobs:
               run: |
                   git config --global user.email "no-reply@github.com"
                   git config --global user.name "GitHub Actions"
-                  git add ./mobilenet/project/dist/bundle.js
+                  git add *
                   git commit -m "Webpacking"
                   git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
                   git config pull.rebase false
