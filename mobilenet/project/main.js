@@ -9,7 +9,7 @@ async function loadVision() {
 	console.log("Client Ready");
 	ready2 = true;
 }
-await loadVision();
+loadVision();
 
 
 var img;
@@ -25,11 +25,12 @@ function setup() {
 	console.log(canvas);
 	video = createCapture(VIDEO);
 	video.hide();
+	video.on('data', (data) => {
+		img = data;
+	});
 }
 
-video.on('data', (data) => {
-	img = data;
-});
+
 
 function draw() {
 	image(video, 0, 0, canvas.width, canvas.height);

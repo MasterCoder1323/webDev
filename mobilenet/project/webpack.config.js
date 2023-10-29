@@ -4,6 +4,7 @@ const fs = require('fs');
 
 module.exports = {
 	entry: './node_modules/@google-cloud/vision/build/src/index.js',
+	target: 'web',
 	output: {
 		filename: 'bundle.js',
 		path: path.resolve(__dirname, 'dist'),
@@ -31,6 +32,8 @@ module.exports = {
 			url: require.resolve("url"),
 			https: require.resolve("https-browserify"),
 			http: require.resolve("stream-http"),
+			fs: require.resolve('browserify-fs'),
+			child_process: require.resolve('cross-spawn'),
 			zlib: require.resolve("browserify-zlib"),
 		},
 		modules: [
