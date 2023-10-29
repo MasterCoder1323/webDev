@@ -1,7 +1,9 @@
 const path = require('path');
+const nodeExternals = require('webpack-node-externals');
+const fs = require('fs');
 
 module.exports = {
-	entry: './index.js',
+	entry: './node_modules/@google-cloud/vision/build/src/index.js',
 	output: {
 		filename: 'bundle.js',
 		path: path.resolve(__dirname, 'dist'),
@@ -39,4 +41,6 @@ module.exports = {
 		fs: 'fs',
 		child_process: 'child_process',
 	},
+	mode: 'production',
+
 };

@@ -23,7 +23,8 @@
     "tls": "^0.0.1",
     "url": "^0.11.3",
     "util": "^0.12.5",
-    "vim": "^0.1.0"
+    "vim": "^0.1.0",
+    "webpack-node-externals": "^3.0.0"
   },
   "devDependencies": {
     "webpack": "^5.89.0",

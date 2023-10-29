@@ -1,15 +1,22 @@
 const model = ml5.imageClassifier('MobileNet', modelLoaded);
-var ready = false;
+var ready1 = false;
+var ready2 = false;
+var client;
+async function loadVision() {
+	client = await new ImageAnnotatorClient({
+		keyFilename: 'keys/serviceAccountKey.json', // Replace with your actual key file path
+	});
+	console.log("Client Ready");
+	ready2 = true;
+}
+await loadVision();
 
-const client = new ImageAnnotatorClient({
-	keyFilename: 'keys/serviceAccountKey.json', // Replace with your actual key file path
-});
 
-var objects, img;
+var img;
 
 function modelLoaded() {
 	console.log("Model Loaded", model);
-	ready = true;
+	ready1 = true;
 }
 
 function setup() {
@@ -26,8 +33,10 @@ video.on('data', (data) => {
 
 function draw() {
 	image(video, 0, 0, canvas.width, canvas.height);
-	if (ready) {
+	if (ready1) {
 		identify();
+	}
+	if (ready2) {
 		vision(img);
 	}
 }
