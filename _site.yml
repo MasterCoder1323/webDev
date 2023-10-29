@@ -1,2 +1,3 @@
 exclude:
     - mobilenet/project/node_modules/*
+include: [".libraries/*"]
