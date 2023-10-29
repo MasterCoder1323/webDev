@@ -26,12 +26,12 @@ function modelLoaded() {
 function setup() {
 	//Create Canvases
 	canvas = createCanvas(550, 550);
-	videoHolder = createGraphics(550, 500, "video-canvas");
+	videoHolder = createGraphics(550, 500, document.getElementById('video-canvas'));
 	//Position Canvases
 	canvas.parent("canvas-holder");
 	videoHolder.parent('video-holder');
 	//Make videoHolder visible
-	videoHolder.style.display = "block";
+	document.getElementById('video-canvas').style.display = "block";
 	//Create Capture
 	video = createCapture(VIDEO);
 	video.hide();
