@@ -17,12 +17,12 @@ body {
 	float: left;
 }
 
-.div-speed-img {
+.disk-gif {
 	width: 200px;
 	border-radius: 100px;
 }
 
-#speed {
+#speed1 {
 	font-size: 23px;
 	margin: 15px;
 }
@@ -31,12 +31,8 @@ body {
 	float: right;
 }
 
-.div-volume-img {
-	width: 200px;
-	border-radius: 100px;
-}
 
-#volume {
+#volume1 {
 	font-size: 23px;
 	margin: 15px;
 }

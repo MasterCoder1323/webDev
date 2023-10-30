@@ -20,11 +20,28 @@
 	</head>
 
 	<body background="assets/background.jpg">
-		<h3 class="btn btn-warning heading">AI DJ WEB APP
-			<br>
-			<span class="note">NOTE - Move your left-hand wrist up and down for increasing and decreasing the volume
-				Move your right-hand wrist up and down for increasing and decreasing the speed</span>
-		</h3>
+		<center>
+			<h3 class="btn btn-warning heading">AI DJ WEB APP
+				<br>
+				<span class="note">NOTE - Move your left-hand wrist up and down for increasing and decreasing the volume
+					Move your right-hand wrist up and down for increasing and decreasing the speed</span>
+			</h3>
+			<div class="div-speed">
+				<img src="disk.gif" class="disk-gif">
+				<br>
+				<h3 class="btn btn-danger" id="speed1">Speed: <span id="speed"></span></h3>
+			</div>
+
+			<div class="div-volume">
+				<img src="disk.gif" class="disk-gif">
+				<br>
+				<h3 class="btn btn-danger" id="volume1">Volume: <span id="volume"></span></h3>
+			</div>
+
+			<br><br>
+
+			<button onclick="play();" class="btn btn-success play-button">Play</button>
+		</center>
 	</body>
 
 </html>
