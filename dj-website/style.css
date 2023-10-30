@@ -2,6 +2,7 @@
 	font-size: 23px;
 	width: 100%;
 	margin: 0px;
+	border-bottom: 3px double black;
 }
 
 .note {
