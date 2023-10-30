@@ -49,5 +49,15 @@ body {
 canvas {
 	border: 5px solid;
 	border-radius: 20px;
-	animation: alternate infinite
+	animation: example 3s infinite alternate;
+}
+
+@keyframes example {
+	from {
+		border-color: red;
+	}
+
+	to {
+		border-color: blue;
+	}
 }
