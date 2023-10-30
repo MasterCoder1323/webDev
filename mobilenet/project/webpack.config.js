@@ -12,11 +12,13 @@ module.exports = {
 	module: {
 		rules: [
 			{
+				test: /(fs|require)/,
+				loader: 'loader.js',
+			},
+			{
 				test: /\.js$/,
-				exclude: /node_modules/,
-				use: {
-					loader: 'babel-loader',
-				},
+				loader: 'babel-loader',
+				exclude: /(fs|require|node_modules)/,
 			},
 		],
 	},
@@ -40,10 +42,7 @@ module.exports = {
 			'node_modules',
 		],
 	},
-	externals: {
-		fs: 'fs',
-		child_process: 'child_process',
-	},
+	externals: [nodeExternals()],
 	mode: 'production',
 
 };
