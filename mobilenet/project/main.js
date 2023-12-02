@@ -2,6 +2,7 @@ const model = ml5.imageClassifier('MobileNet', modelLoaded);
 var ready1 = false;
 var ready2 = false;
 var client;
+/*
 async function loadVision() {
 	client = await new ImageAnnotatorClient({
 		keyFilename: 'keys/serviceAccountKey.json', // Replace with your actual key file path
@@ -10,7 +11,7 @@ async function loadVision() {
 	ready2 = true;
 }
 loadVision();
-
+*/
 
 var img;
 
@@ -25,11 +26,10 @@ function setup() {
 	console.log(canvas);
 	video = createCapture(VIDEO);
 	video.hide();
-	video.on('data', (data) => {
+	/*video.on('data', (data) => {
 		img = data;
-	});
+	});*/
 }
-
 
 
 function draw() {
