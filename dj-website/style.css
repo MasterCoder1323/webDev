@@ -23,19 +23,13 @@ body {
 	border-radius: 100px;
 }
 
-#speed1 {
+#speed1, #volume1 {
 	font-size: 23px;
 	margin: 15px;
 }
 
 .div-volume {
 	float: right;
-}
-
-
-#volume1 {
-	font-size: 23px;
-	margin: 15px;
 }
 
 .play-button {
