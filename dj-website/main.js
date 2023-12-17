@@ -4,18 +4,18 @@ var wrists = {
 	left: {
 		x: 0,
 		y: 0,
-		score
+		score: 1
 	},
 	right: {
 		x: 0,
 		y: 0,
-		score
+		score: 1
 	},
 	volume: function () {
-		return (floor(Number(this.left.score) * 2) / 1000);
+		return (floor(Number(this.left.score) * 2) / 1000).toFixed(1);
 	},
 	speed: function () {
-		return (this.right.score / 200).toFixed(1);
+		return (floor(Number(this.left.score) * 2) / 1000).toFixed(1);
 	}
 };
 function preload() {
@@ -50,4 +50,14 @@ function gotPoses(results) {
 		console.log("leftWristX = " + leftWristX + " leftWristY = " + leftWristY);
 
 	}
+}
+function draw() {
+	image(video, 0, 0, 600, 500);
+	song.rate(wrists.speed());
+	song.setVolume(wrists.volume());
+}
+function play() {
+	song.play();
+	song.setVolume(1);
+	song.rate(1);
 }
