@@ -1,29 +1,3 @@
-name: Commit Editor
-run-name: ${{ github.actor }} is Editing Commits
-on: [push]
-jobs:
-    master:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/setup-node@v3
-              with:
-                  node-version: "18"
-            - name: Checkout Repository
-              uses: actions/checkout@main
-            - name: Get Current Date
-              id: date
-              run: echo "time=$(date --rfc-3339=date)" >> ${GITHUB_ENV}
-            - name: Making Commit Log
-              run: |
-                  echo Next Commit on ${{ env.time }} >> .github/workflow-data/commit.log
-                  ls -a >> .github/workflow-data/commit.log
-            - name: Commit changes
-              run: |
-                  git config --global user.email "no-reply@github.com"
-                  git config --global user.name "GitHub Actions"
-                  git add .github/workflow-data/commit.log
-                  git commit -m "Making Commit Log"
-                  git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
-                  git push
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+version https://git-lfs.github.com/spec/v1
+oid sha256:cf2d1252b8113f178ea564f84735ae9f3338d88d18ac85c864f3f36bd0a155b1
+size 1206

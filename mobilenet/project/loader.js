@@ -1,12 +1,3 @@
-// my-loader.js
-module.exports = function (module) {
-	// Replace the fs module with a function that imports the fs module at runtime
-	module.source = module.source.replace(/(fs\.)/g, `(await import('browserify-fs')).`);
-
-	// Replace the require function with a function that imports the require function at runtime
-	module.source = module.source.replace(/(require\(')([^']+)('\))/g, `(await import('require')).$2`);
-	// Replace the child_process module with a function that imports the child_process module at runtime
-	module.source = module.source.replace(/(child_process\.)/g, `(await import('child_process')).`);
-
-	return module;
-};
+version https://git-lfs.github.com/spec/v1
+oid sha256:d6824f9e35257d53bc6e36d1c37a571c6b764e4743bb27d60a3a02efe96d8c16
+size 636
