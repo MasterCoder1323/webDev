@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cae146e3dc7b98a682a4cea9b875e43640ac7d054dbefe3563f37f044365115d
-size 121
+body
+{
+	text-align: center;
+}
+span
+{
+	font-size: 12px;
+	color: red;
+}
+canvas
+{
+	background: pink;
+	border-radius: 20px;
+}

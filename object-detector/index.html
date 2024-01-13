@@ -1,3 +1,34 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0d534246e349c64ae511fa2746b76a12005df37f90f8dae4f6dd00b81a2482c7
-size 1074
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Object Detection</Title>
+		<!-- Librries -->
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="../.libraries/bootstrap/css/bootstrap.min.css">
+		<script src="../.libraries/bootstrap/js/bootstrap.min.js"></script>
+		<script src="../.libraries/jquery/jquery.min.js"></script>
+		<script src="../.libraries/ml5/ml5.min.js"></script>
+		<script src="../.libraries/p5/p5.min.js"></script>
+	</head>
+
+	<body>
+		<center>
+			<div lass="heading">
+				<h1>Object Detection</h1>
+				<p>NOTE - Upload Image for detection.</p>
+			</div>
+			<input type="file" id="fileInput" accept="image/*" hidden>
+
+			<button onclick="document.getElementById('fileInput').click()" class="btn btn-info">Browse</button>
+			<br><br>
+			<button class="btn btn-success" onclick="submit();" disabled id="sButton">Identify</button>
+			<br><br>
+			<button class="btn btn-danger">Status: <span id="status">Waiting for Image</span></button>
+			<br><br>
+			<div id="canvas-holder"></div>
+		</center>
+		<script src="main.js"></script>
+	</body>
+
+</html>

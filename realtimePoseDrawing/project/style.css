@@ -1,3 +1,30 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7836371329e672c1bc3665f135434529f3cb3e6bb2c13617f1828a95e9a431a1
-size 423
+.heading {
+	font-size: 23px;
+	width: 100%;
+	margin: 0px;
+	box-shadow: 5px 5px 5px grey;
+}
+
+.note {
+	font-size: 15px;
+	color: black;
+}
+
+#main-canvas {
+	border: 5px solid;
+	border-radius: 20px;
+	box-shadow: 5px 5px 5px red;
+	animation: example 5s infinite alternate;
+}
+
+@keyframes example {
+	from {
+		border-color: orange;
+		box-shadow: 5px 5px 5px blue;
+	}
+
+	to {
+		border-color: blue;
+		box-shadow: 5px 5px 5px orange;
+	}
+}

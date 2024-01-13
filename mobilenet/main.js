@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:68706fc7b0ced122b3cb16f22a28e1237f591f1dbd5627e9e2da508ebaed770c
-size 403
+const model = ml5.imageClassifier('MobileNet', modelLoaded);
+var ready = false;
+
+function modelLoaded() {
+	console.log("Model Loaded", model);
+	ready = true;
+}
+
+function setup() {
+	canvas = createCanvas(300, 300);
+	canvas.parent("canvas-parent");
+	video = createCapture(VIDEO);
+	video.hide();
+}
+
+function draw() {
+	image(video, 0, 0, 300, 300);
+	if (ready) {
+		identify();
+	}
+}
+
+function identify() {
+
+}

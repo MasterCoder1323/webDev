@@ -1,3 +1,53 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e87d93ba7601859e02ff417d17160944a0ceaa54f96144904af2472b17723889
-size 629
+h1 {
+	font-family: 'Special Elite', fantasy;
+	color: rgb(38, 0, 255);
+}
+
+body {
+	background-color: gradient(red, green, blue);
+}
+
+#header {
+	background-color: orange;
+}
+
+#show_sketch {
+	float: right;
+}
+
+canvas {
+	border-radius: 20px;
+	animation-name: example;
+	animation-duration:
+		4s;
+	margin-top: 50px;
+	animation-iteration-count: infinite;
+	margin-bottom: 20px;
+}
+
+@keyframes example {
+	from {
+		box-shadow: 1px 1px 38px yellow;
+	}
+
+	to {
+		box-shadow: 5px 1px 38px magenta;
+	}
+}
+
+
+
+p, span {
+	padding-top: 10px;
+	font-family: 'Special Elite', fantasy;
+	font-size: 25px;
+
+}
+
+.right {
+	float: right;
+}
+
+.left {
+	float: left;
+}

@@ -1,3 +1,53 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:da5fa048b771ea4a24371082946f971c0566fe715866517eee6f5a6420fcf514
-size 745
+#footer-top {
+	border: 10px solid darkgray;
+	border-radius: 2px;
+}
+
+canvas {
+	border-radius: 20px;
+	animation-name: example;
+	animation-duration:
+		4s;
+	margin-top: 50px;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+@keyframes example {
+	from {
+		box-shadow: 5px 5px 38px yellow;
+	}
+
+	to {
+		box-shadow: 5px 5px 38px magenta;
+	}
+}
+
+.heading {
+	font-size: 23px;
+	width: 100%;
+	margin: 0px;
+	box-shadow: 5px 5px 5px grey;
+}
+
+.heading_div {
+	float: none;
+	background: white;
+	padding: 10px;
+	border-radius: 20px;
+	color: black;
+	box-shadow: 5px 5px 5px grey;
+}
+
+.heading_div2 {
+	font-size: 18px;
+}
+
+.result_para_tag {
+	box-shadow: 5px 5px 5px grey;
+	font-size: 20px;
+}
+
+.result_para_tag span {
+	white-space: pre-line;
+}

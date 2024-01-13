@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cbcb1e8996293543075f702fd8a2f52ad3bd15b990e9cd86ebee3fcc1fc74c14
-size 247
+body {
+    background-color: aqua;
+    color: black;
+}
+
+#h1323 {
+    width: 80%;
+    font-size: 24px;
+}
+
+#camera {
+    border: 2px dashed black;
+    width: 350px;
+    height: 300px;
+}
+
+.resultText {
+    color: darkgoldenrod;
+    font-size: 20px;
+}
