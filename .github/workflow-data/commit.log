@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-version https://git-lfs.github.com/spec/v1
-oid sha256:13f1d0691282f13581886b2be91261406befede520a063bc0cb27e4c13265a16
-size 7752
-=======
 Next Commit on 2023-10-07
 .
 ..
@@ -584,4 +579,3 @@ realtime-object-detector
 realtimePoseDrawing
 tidy.log
 voice-canvas
->>>>>>> parent of 07dbeb94 (video-object-detection)
