@@ -1,3 +1,6 @@
+*.psd filter=lfs diff=lfs merge=lfs -text
+*.mp4 filter=lfs diff=lfs merge=lfs -text
+*.webm filter=lfs diff=lfs merge=lfs -text
 *.md filter=lfs diff=lfs merge=lfs -text
 *.log filter=lfs diff=lfs merge=lfs -text
 *.yml filter=lfs diff=lfs merge=lfs -text
@@ -14,7 +17,6 @@
 *.1 filter=lfs diff=lfs merge=lfs -text
 *.jpg filter=lfs diff=lfs merge=lfs -text
 *.mp3 filter=lfs diff=lfs merge=lfs -text
-*.mp4 filter=lfs diff=lfs merge=lfs -text
 *.node_repl_history filter=lfs diff=lfs merge=lfs -text
 *.yarnrc filter=lfs diff=lfs merge=lfs -text
 *.json filter=lfs diff=lfs merge=lfs -text
@@ -749,4 +751,3 @@
 /mobilenet/project/node_modules/yargs/LICENSE filter=lfs diff=lfs merge=lfs -text
 /mobilenet/project/node_modules/yargs/yargs filter=lfs diff=lfs merge=lfs -text
 /mobilenet/project/node_modules/yocto-queue/license filter=lfs diff=lfs merge=lfs -text
-*.webm filter=lfs diff=lfs merge=lfs -text
