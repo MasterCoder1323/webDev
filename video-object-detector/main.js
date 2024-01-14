@@ -37,7 +37,6 @@ function modelLoaded() {
 function gotResult(error, results) {
 	if (error) {
 		console.log(error);
-		alert(error);
 	}
 	console.log(results);
 	objects = results;
