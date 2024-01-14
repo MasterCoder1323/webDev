@@ -1,0 +1,13 @@
+body {
+	background-image: linear-gradient(blue, rgb(219, 3, 219));
+}
+
+.heading {
+	background-color: orange;
+}
+
+canvas {
+	border-radius: 20px;
+	box-shadow: 10px red;
+	border: 5px outset yellow;
+}
