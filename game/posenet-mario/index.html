@@ -26,12 +26,58 @@
 
 		<link rel="stylesheet" type="text/css" href="style.css">
 
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/addons/p5.sound.min.js"></script>
+		<script src="../../.libraries/p5/addons/p5.sound.min.js"></script>
 
 	</head>
 
-	<body>
+	<body background="assets/site-images/background.jpg">
+		<center>
+			<div class="btn btn-primary heading">
+				<h3>POSENET MARIO GAME </h3>
+				<button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Instructions</button>
+			</div>
 
+			<img src="assets/site-images/mario.jpg" class="big_image">
+			<br><br>
+			<button class="btn btn-success" onclick="startGame()" id="start">Play Game</button>
+			<br><br>
+			<div style="background-color: aqua; border-radius: 10px;">
+				<p>Chose your controle method:</p>
+				<form>
+					<input type="radio" id="posenet" name="controles" value="posenet">
+					<label for="posenet">Posenet</label>
+					<br>
+					<input type="radio" id="arrow-key" name="controles" value="arrow-key">
+					<label for="arrow-key">Arrow Keys</label>
+				</form>
+			</div>
+			<br><br>
+			<h3 class="btn btn-warning">Game Status: <span id="status"></span></h3>
+			<br><br>
+			<div id="canvas"></div>
+			<div id="game_console"></div>
+			<h4>Source Code : <a href="https://github.com/linuk">Linuk</a> || Game Credit : Mario</h4>
+
+			<div id="myModal" class="modal fade ">
+				<div class="modal-dialog">
+					<!-- Modal content-->
+					<div class="modal-content">
+
+						<div class="modal-header">
+							<button class="close" data-dismiss="modal">&times;</button>
+							<h4 class="btn-success btn" style="width: 75%;">Instructions</h4>
+						</div>
+
+						<div class="modal-body">
+							<img src="assets/site-images/right.png" class="img-responsive instruction_image">
+							<img src="assets/site-images/left.png" class="img-responsive instruction_image">
+							<img src="assets/site-images/jump.png" class="img-responsive instruction_image">
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</center>
 	</body>
 
 </html>
