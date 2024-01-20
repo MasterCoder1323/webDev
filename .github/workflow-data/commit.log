@@ -721,3 +721,33 @@ realtimePoseDrawing
 tidy.log
 video-object-detector
 voice-canvas
+Next Commit on 2024-01-20
+.
+..
+.git
+.gitattributes
+.github
+.libraries
+.nojekyll
+LICENSE
+README.md
+Sound_controlled_aliens
+_config.yml
+_site.yml
+collage selfie app
+dj-website
+doodle-Identifier
+emotion-detector
+game
+image-identification
+index.html
+jsfmt.log
+keypress-event
+mobilenet
+object-detector
+object-identification
+realtime-object-detector
+realtimePoseDrawing
+tidy.log
+video-object-detector
+voice-canvas
