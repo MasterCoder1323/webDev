@@ -1,10 +1,13 @@
+var mario;
 function preload() {
 	world_start = loadSound("assets/sounds/world_start.wav");
-	mario.jump = loadSound("assets/sounds/jump.wav");
-	mario.coin = loadSound("assets/sounds/coin.wav");
-	mario.kick = loadSound("assets/sounds/kick.wav");
-	mario.die = loadSound("assets/sounds/mariodie.wav");
-	gameoversound = loadSound("assets/sounds/gameover.wav")
+	mario = {
+		jump: loadSound("assets/sounds/jump.wav"),
+		//coin: loadSound("assets/sounds/coin.wav"),
+		kick: loadSound("assets/sounds/kick.wav"),
+		die: loadSound("assets/sounds/mariodie.wav")
+	}
+	gameoversound = loadSound("assets/sounds/gameover.wav");
 	setSprites();
 	MarioAnimation();
 }
@@ -15,7 +18,7 @@ function setup() {
 
 	video = createCapture(VIDEO);
 	video.size(800, 400);
-	video.parent("game_consol");
+	video.parent("game_console");
 
 	poseNet = ml5.poseNet(video, modelLoaded);
 	poseNet.on('pose', gotPoses);
@@ -27,7 +30,7 @@ function modelLoaded() {
 	console.log("Model Has Been Loaded:", poseNet);
 }
 
-function gotPoses(error, results) {
+function gotPoses(results, error) {
 	if (error) {
 		console.log(error);
 	} else if (results.length > 0) {
@@ -42,9 +45,9 @@ function draw() {
 
 function getControles() {
 	if (document.getElementById("arrow-key").checked) {
-		return "arrow-keys";
+		return true;
 	} else {
-		return "posenet";
+		return false;
 	}
 }
 

@@ -4,49 +4,53 @@
 =================================*/
 
 /* main character variabes */
-var mario, bricks, clouds, mountains, enemyMushrooms, pipes, platforms, coins, nose, gameStatus;
+var bricks, clouds, mountains, enemyMushrooms, pipes, platforms, coins, nose, gameStatus;
 
 /* Control variabes */
 var control = {
 	up: function () {
-		if (getControles() = "arrow-keys") {
-			return keyDown(32);
-		} else {
-			if (nose.y < 200) {
-				return true;
+		if (getControles() && (keyIsDown(32) || keyIsDown(87))) {
+			console.log('space clicked, time to jump!');
+			return true;
+		} else if (getControles() == false) {
+			if (nose) {
+				return (nose.y < 200);
 			} else {
 				return false;
 			}
 		}
 	}, // 32=spaceBar
 	left: function () {
-		if (getControles() = "arrow-keys") {
-			return keyDown('LEFT_ARROW');
-		} else {
-			if (nose.x > 400) {
-				return true;
+		if (getControles() && (keyIsDown(LEFT_ARROW) || keyIsDown(97) || keyIsDown(65))) {
+			console.log('lets go left!');
+			return true;
+		} else if (getControles() == false) {
+			if (nose) {
+				return (nose.x > 400);
 			} else {
 				return false;
 			}
 		}
 	},
 	right: function () {
-		if (getControles() = "arrow-keys") {
-			return keyDown('RIGHT_ARROW');
-		} else {
-			if (nose.x < 400) {
-				return true;
+		if (getControles() && (keyIsDown(RIGHT_ARROW) || keyIsDown(68))) {
+			console.log('following the screen!');
+			return true;
+		} else if (getControles() == false) {
+			if (nose) {
+				return (nose.x < 400);
 			} else {
 				return false;
 			}
 		}
 	},
 	revive: function () {
-		if (getControles() = "arrow-keys") {
-			return keyDown(32);
-		} else {
-			if (nose.y < 200) {
-				return true;
+		if (getControles() && keyIsDown(32)) {
+			console.log('necromancy brought you back from the dead!');
+			return true;
+		} else if (getControles() == false) {
+			if (nose) {
+				return (nose.y < 200);
 			} else {
 				return false;
 			}
@@ -256,7 +260,7 @@ function getCoins(coin, character) {
 	if (character.overlap(coin) && character.live && coin.get == false) {
 		character.coins += 1;
 		coin.get = true;
-		mario.coin.play();
+		//mario.coin.play();
 	};
 }
 
@@ -344,9 +348,9 @@ function manualControl(character) {
 
 /* Movements of character */
 function jumping(character) {
-	if ((control.up() && character.live) || (touchIsDown && character.live)) {
+	if ((control.up() && character.live)) {
 		character.velocity.y += gameConfig.jump;
-		mario.jump.play();
+		//mario.jump.play();
 	}
 }
 
@@ -401,7 +405,7 @@ function StepOnEnemy(obj1, obj2) {
 		} else {
 			obj1.velocity.y += gameConfig.jump * 0.8;
 		}
-		mario.kick.play();
+		//mario.kick.play();
 	}
 }
 
@@ -416,7 +420,7 @@ function die(character) {
 	character.velocity.y -= 2;
 	console.log("YOU ARE DEAD... YOU ARE DEAD!" + character.liveNumber);
 	if (character.liveNumber > 0) {
-		mario.die.play();
+		//mario.die.play();
 	} else {
 		gameoversound.play();
 	}
