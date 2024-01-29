@@ -21,8 +21,7 @@ function setup() {
 	video.parent("game_console");
 
 	poseNet = ml5.poseNet(video, modelLoaded);
-	poseNet.on('pose', gotPoses);
-
+	getControles();
 	instializeInSetup(mario);
 }
 
@@ -45,12 +44,11 @@ function draw() {
 
 function getControles() {
 	if (document.getElementById("arrow-key").checked) {
+		poseNet.removeListener('pose', gotPoses);
 		return true;
 	} else {
+		poseNet.on("pose", gotPoses);
 		return false;
 	}
 }
-
-
-
 
