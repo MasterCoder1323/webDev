@@ -19,8 +19,6 @@ function setup() {
 	video = createCapture(VIDEO);
 	video.size(800, 400);
 	video.parent("game_console");
-
-	poseNet = ml5.poseNet(video, modelLoaded);
 	getControles();
 	instializeInSetup(mario);
 }
@@ -44,9 +42,12 @@ function draw() {
 
 function getControles() {
 	if (document.getElementById("arrow-key").checked) {
-		poseNet.removeListener('pose', gotPoses);
+		poseNet = false;
 		return true;
 	} else {
+		if (!poseNet) {
+			poseNet = ml5.poseNet(video, modelLoaded);
+		}
 		poseNet.on("pose", gotPoses);
 		return false;
 	}
