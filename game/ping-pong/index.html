@@ -7,13 +7,15 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="../../.libraries/bootstrap/css/bootstrap.min.css">
-		<script src="../../.libraries/jquery/"></script>
+		<script src="../../.libraries/jquery/jquery.min.js"></script>
 		<script src="../../.libraries/bootstrap/js/bootstrap.min.js"></script>
 
 		<link rel="stylesheet" href="style.css">
 		<script src="../../.libraries/ml5/ml5.min.js"></script>
 		<script src="../../.libraries/p5/p5.min.js"></script>
 		<script src="../../.libraries/p5/addons/p5.sound.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/planck-js@0.3.31/dist/planck.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/p5play@3.19.6/p5play.min.js"></script>
 	</head>
 
 	<body background="assets/background.jpg">
@@ -25,8 +27,6 @@
 			</div>
 
 			<br><br>
-			<button class="btn btn-success" onclick="startGame()" id="start">Play Game</button>
-			<br><br>
 			<div class="control-options">
 				<p>Chose your control method:</p>
 				<form>
@@ -34,15 +34,13 @@
 					<label for="posenet">Posenet</label>
 					<br>
 					<input type="radio" id="arrow-key" name="controles" value="arrow-key">
-					<label for="arrow-key">Arrow Keys</label>
+					<label for="arrow-key">Mouse</label>
 				</form>
 			</div>
 			<br><br>
 			<h3 id="status" class="btn btn-default"></h3>
 			<br><br>
 			<div id="canvas"></div>
-			<br><br>
-			<button onclick="restart()" class="btn btn-danger" id="restart">Restart</button>
 			<br><br>
 
 			<h4>Developed By : Mastercoder1323 with base by WhitehatJr team</h4>
