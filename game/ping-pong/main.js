@@ -6,7 +6,7 @@ function setup() {
 	ball = new createSprite(350, 300, 50, 'dynamic');
 	ball.color = 'white';
 	ball.bounciness = 1;
-	ball.direction = random(140, 220);
+	ball.direction = random(360);
 	ball.speed = 3;
 	//Walls
 	wall1 = new Sprite([[0, 600], [700, 600]], 's');
