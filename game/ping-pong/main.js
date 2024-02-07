@@ -8,7 +8,6 @@ function setup() {
 	ball.bounciness = 1;
 	ball.direction = random(140, 220);
 	ball.speed = 3;
-	ball.maxSpeed = 10;
 	//Walls
 	wall1 = new Sprite([[0, 600], [700, 600]], 's');
 	wall2 = new Sprite([[0, 0], [700, 0]], 's');
@@ -30,4 +29,20 @@ function draw() {
 	background(0);
 	computer.y = ball.y;
 	player.y = mouse.y;
+	if (ball.x < 0) {
+		ball.x = 350;
+		ball.y = 300;
+		ball.direction = random(140, 220);
+		ball.speed = 3;
+	}
+	if (ball.speed > 20) {
+		ball.speed = 20;
+	}
+	if (ball.velocity.x < 2 && ball.velocity.x > -2) {
+		if (ball.velocity.x >= 0) {
+			ball.velocity.x = 2;
+		} else {
+			ball.velocity.x = -2
+		}
+	}
 }
