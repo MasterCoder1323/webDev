@@ -1,4 +1,7 @@
 let player, computer, wall1, wall2, ball, line;
+let playerPoints = 0;
+let computerPoints = 0;
+let dificulty = 0.05;
 function setup() {
 	canvas = createCanvas(700, 600);
 	canvas.parent('canvas');
@@ -23,20 +26,40 @@ function setup() {
 	player = new Sprite(5, 300, 5, 100, 'k');
 	player.color = 'red';
 	player.bounciness = 1.5;
+	video = createCapture(VIDEO);
+	video.size(800, 400);
+	video.parent("game_console");
 }
 
 function draw() {
 	background(0);
-	computer.y = ball.y;
-	player.y = mouse.y;
+	computer.moveTowards(695, ball.y, dificulty);
+	fill(255);
+	textSize(24);
+	text('You: ' + playerPoints, 50, 30);
+	text('Computer: ' + computerPoints, 50, 50);
+	if (document.getElementById('arrow-key').checked) {
+		player.y = mouse.y;
+	} else {
+
+	}
 	if (ball.x < 0) {
 		ball.x = 350;
 		ball.y = 300;
 		ball.direction = random(140, 220);
 		ball.speed = 3;
+		computerPoints++;
+		console.log('You:' + playerPoints, 'Computer:' + computerPoints);
+	} else if (ball.x > 700) {
+		ball.x = 350;
+		ball.y = 300;
+		ball.direction = random(140, 220);
+		ball.speed = 3;
+		playerPoints++;
+		console.log('You:' + playerPoints, 'Computer:' + computerPoints);
 	}
-	if (ball.speed > 20) {
-		ball.speed = 20;
+	if (ball.speed > 30) {
+		ball.speed = 30;
 	}
 	if (ball.velocity.x < 2 && ball.velocity.x > -2) {
 		if (ball.velocity.x >= 0) {
