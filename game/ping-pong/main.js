@@ -1,4 +1,4 @@
-let player, computer, wall1, wall2, ball, line;
+let player, computer, wall1, wall2, ball, line, poseNet;
 let playerPoints = 0;
 let computerPoints = 0;
 let dificulty = 0.05;
@@ -39,9 +39,13 @@ function draw() {
 	text('You: ' + playerPoints, 50, 30);
 	text('Computer: ' + computerPoints, 50, 50);
 	if (document.getElementById('arrow-key').checked) {
+		poseNet = false;
 		player.y = mouse.y;
 	} else {
-
+		if (!poseNet) {
+			poseNet = ml5.poseNet(video, modelLoaded);
+		}
+		poseNet.on("pose", gotPoses);
 	}
 	if (ball.x < 0) {
 		ball.x = 350;
@@ -68,4 +72,15 @@ function draw() {
 			ball.velocity.x = -2
 		}
 	}
+}
+function gotPoses(results, error) {
+	if (error) {
+		console.log(error);
+	}
+	console.log(results);
+	player.y = results[0].pose.rightWrist.y;
+}
+
+function modelLoaded() {
+	console.log(poseNet);
 }
