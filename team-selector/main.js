@@ -1,5 +1,6 @@
-const players = [];
-const teams = [];
+var players = [];
+var teams = [];
+var data = [];
 
 function addPlayer() {
 	const name = document.getElementById('name').value;
@@ -67,4 +68,45 @@ function generateTeams(numTeams) {
 	}).join('');
 
 	document.getElementById('teams').innerHTML = teamsHtml;
+}
+
+function loadPlayers() {
+	group = Number(document.getElementById("group").value);
+	players = data[group].players;
+	displayPlayers();
+}
+
+
+
+function getSaved() {
+	data = localStorage.getItem("teamData");
+	let html = "";
+	if (data != null) {
+		data = JSON.parse(data);
+		data.forEach((team, index) => {
+			html = html + "<option value=" + index + ">" + team.teamName + "</option>"
+		});
+	}
+	document.getElementById("group").innerHTML = html;
+}
+
+window.onload = getSaved
+
+function savePlayers() {
+	if (data == null) {
+		data = [];
+	}
+	data.push({
+		teamName: document.getElementById('save-name').value,
+		players: players
+	});
+	localStorage.setItem("teamData", JSON.stringify(data));
+	getSaved();
+	players = [];
+	displayPlayers();
+}
+
+function deleteGroups() {
+	localStorage.setItem('teamData', []);
+	location.reload();
 }
